@@ -1,0 +1,49 @@
+[extensions]
+hgext.purge=
+hgext.hgk =
+color =
+hgext.extdiff =
+hgext.churn=
+hgext.hgview=/usr/share/pyshared/hgext/hgview.py
+mq =
+rebase =
+
+[hgview]
+dotradius = 12
+fontsize = 8
+#font = Bitstream Vera Sans
+#fileaddedcolor display color of an added file
+#filedeletedcolor display color of a deleted file
+#filemodifiedcolor display color of a modified file
+#fileremovedcolor display color of a removed file
+
+#diffbgcolor background color of diffs
+#difffgcolor text color of diffs
+#diffminuscolor text color of removed lines in diffs
+#diffpluscolor text color of added lines in diffs
+#diffsectioncolor text color of new section in diffs
+
+[diff]
+git = True
+
+[extdiff]
+cmd.vimdiff = gvim
+opts.vimdiff = -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+
+[hgk]
+path = /usr/share/mercurial/hgk
+
+[ui]
+username=Robert Frohl <frohl.robert@gmail.com>
+style = compact
+
+[color]
+status.modified = blue bold
+status.added = green bold
+status.removed = red bold
+status.deleted = magenta bold
+status.unknown = black bold
+status.ignored = black bold
+status.clean = none
+status.copied = none
+
