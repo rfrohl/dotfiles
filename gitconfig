@@ -24,3 +24,6 @@
 [diff]
     rename = copy
     tool = vimdiff
+
+[push]
+    default = simple
