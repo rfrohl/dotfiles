@@ -17,15 +17,13 @@ unsetopt beep notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-# Farbe im Prompt
+# Initialize colors.
 autoload -U colors && colors
 
-# Prompt mit Pfad - rechte Seite
-#RPROMPT=' %(!.%/.%~)'
+# prompt with current path on the right side
 RPROMPT=' %(?.%(!.%/.%~).:()'
 
-# linke Seite
-#PROMPT='%n@%m%# '
+# left side
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
 
@@ -35,7 +33,7 @@ setopt autopushd
 # Spalten so schmal wie möglich
 setopt listpacked
 
-# Sortierreihenfolge von 'ls -v'
+# sort order of 'ls -v'
 setopt numericglobsort
 
 # zstyle ':completion:*' menu select=1
@@ -92,8 +90,6 @@ fi
 # ALIAS
 ######################################
 
-alias apg='apg -a1 -m16 -x16 -n1 -MNL /dev/urandom'
-# '--color=auto' == Farben | '-F' == '/'->Verzeichnis && '*'->ausfuehrbar | -v == sortiert
 alias ls='ls --color=auto -F -v'
 alias la='ls -a'
 alias ll='ls -l'
@@ -109,7 +105,11 @@ alias make="make -j4"
 
 alias df="df --human-readable"
 
-#alias hexdump="hexdump -C" # REMOVED: hd == hexdump -C
+alias apg='apg -a1 -m16 -x16 -n1 -MNL /dev/urandom'
+
+alias tmux='tmux -2'
+
+alias objdump='objdump -d'
 
 alias gcc="gcc -g"
 
@@ -120,23 +120,10 @@ alias APT="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgr
 # suffix-alias
 alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
 
-alias tmux='tmux -2'
 
-alias objdump='objdump -d'
-
-
-######################################
-# EXPORT
-######################################
-
-#Computergrafikpraktikum
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:~/Uni/4.Semester/CG-Prak/QGLViewer/lib"
-
-# java classpath
-export CLASSPATH="$CLASSPATH:/usr/share/java/*:/usr/share/java/classes/*:.:./*:./lib/*:./classes"
-
-# cxxtest for OpenWalnut
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cxxtest"
+# ++++++++++++++++++++++++++++++++++++
+# Ruby
+# ++++++++++++++++++++++++++++++++++++
 
 # Ruby gem
 export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
