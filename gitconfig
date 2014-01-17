@@ -1,3 +1,26 @@
+[core]
+    excludesfile = ~/.gitignore
+
 [user]
-	email = frohl.robert@gmail.com
-	name = rfrohl
+    email = frohl.robert@gmail.com
+    name = rfrohl
+
+[rerere]
+    enabled = true
+
+[color]
+    ui = auto
+
+[alias]
+    a = add
+    c = commit
+    ca = commit -a
+    d = diff
+    l = log --topo-order --decorate
+    sh = show
+    st = status
+    su = submodule update --init
+
+[diff]
+    rename = copy
+    tool = vimdiff
