@@ -11,7 +11,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=12000
 #setopt appendhistory
-setopt autocd correct rm_star_wait extendedglob nomatch histignorealldups
+setopt autocd correct extendedglob nomatch histignorealldups
 setopt incappendhistory
 unsetopt beep notify
 bindkey -e
@@ -35,9 +35,6 @@ setopt listpacked
 
 # sort order of 'ls -v'
 setopt numericglobsort
-
-# disable 10 sec wait for 'rm *'
-unsetopt RM_STAR_WAIT
 
 # zstyle ':completion:*' menu select=1
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
