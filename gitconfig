@@ -17,6 +17,7 @@
     ca = commit -a
     d = diff
     l = log --topo-order --decorate
+    p = pull
     sh = show
     st = status
     su = submodule update --init
