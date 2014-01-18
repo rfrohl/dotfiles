@@ -30,11 +30,14 @@ PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#
 # directory stack
 setopt autopushd
 
-# Spalten so schmal wie möglich
+# make columns as small as possible
 setopt listpacked
 
 # sort order of 'ls -v'
 setopt numericglobsort
+
+# disable 10 sec wait for 'rm *'
+unsetopt RM_STAR_WAIT
 
 # zstyle ':completion:*' menu select=1
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -90,6 +93,7 @@ fi
 # ALIAS
 ######################################
 
+# '--color=auto' == Farben | '-F' == '/'->Verzeichnis && '*'->ausfuehrbar | -v == sortiert
 alias ls='ls --color=auto -F -v'
 alias la='ls -a'
 alias ll='ls -l'
@@ -105,7 +109,8 @@ alias make="make -j4"
 
 alias df="df --human-readable"
 
-alias apg='apg -a1 -m16 -x16 -n1 -MNL /dev/urandom'
+alias apg='/usr/bin/apg -a1 -m16 -x16 -n1 -MNL /dev/random'
+alias apg_short='/usr/bin/apg -a0 -m10 -x10 -n1 -MNL /dev/urandom'
 
 alias tmux='tmux -2'
 
