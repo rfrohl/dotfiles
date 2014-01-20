@@ -25,7 +25,9 @@ RPROMPT=' %(?.%(!.%/.%~).:()'
 
 # left side
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
-PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
+#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
+source "$HOME/.dotfiles/zsh/git-prompt/zshrc.sh"
+PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}\$(git_super_status) %# "
 
 # directory stack
 setopt autopushd
