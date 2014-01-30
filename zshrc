@@ -157,6 +157,14 @@ export LESS_TERMCAP_ue="${reset_color}"     # exit underline mode
 export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
 
 
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+# GO
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+export GOPATH=~/Code/go                                                                                                                                  ~/Code
+export PATH=$PATH:~/Code/go/bin
+
+
 ######################################
 # SSH
 ######################################
