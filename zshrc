@@ -17,6 +17,10 @@ unsetopt beep notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# default programs
+export EDITOR=vim
+export BROWSER=firefox
+
 # Initialize colors.
 autoload -U colors && colors
 
@@ -130,7 +134,7 @@ alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
 # ++++++++++++++++++++++++++++++++++++
 
 # Ruby gem
-export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
+export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
 
 # RAILS
 #export PATH="$PATH:/home/korso/.gem/jruby/1.8/bin"
@@ -141,7 +145,7 @@ export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # jRuby
 #export JRUBY_OPTS="--1.9"
@@ -161,8 +165,8 @@ export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
 # GO
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-#export GOPATH=~/Code/go                                                                                                                                  ~/Code
-#export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/Code/go
+export PATH=$PATH:$GOPATH/bin
 
 
 ######################################
