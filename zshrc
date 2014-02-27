@@ -161,8 +161,8 @@ export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
 # GO
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-export GOPATH=~/Code/go                                                                                                                                  ~/Code
-export PATH=$PATH:~/Code/go/bin
+#export GOPATH=~/Code/go                                                                                                                                  ~/Code
+#export PATH=$PATH:$GOPATH/bin
 
 
 ######################################
