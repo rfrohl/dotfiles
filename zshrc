@@ -24,13 +24,17 @@ export BROWSER=firefox
 # Initialize colors.
 autoload -U colors && colors
 
+# dynamicly load addons
+for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
+    source $file
+done
+
 # prompt with current path on the right side
 RPROMPT=' %(?.%(!.%/.%~).:()'
 
 # left side
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
-source "$HOME/.dotfiles/zsh/git-prompt/zshrc.sh"
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}\$(git_super_status) %# "
 
 # directory stack
