@@ -35,7 +35,7 @@ RPROMPT=' %(?.%(!.%/.%~).:()'
 # left side
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
 #PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
-PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}\$(git_super_status) %# "
+PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%} %# "
 
 # directory stack
 setopt autopushd
@@ -115,9 +115,6 @@ alias make="make -j4"
 
 alias df="df --human-readable"
 
-alias apg='/usr/bin/apg -a1 -m16 -x16 -n1 -MNL /dev/random'
-alias apg_short='/usr/bin/apg -a0 -m10 -x10 -n1 -MNL /dev/urandom'
-
 alias tmux='tmux -2'
 
 alias objdump='objdump -d'
@@ -126,33 +123,8 @@ alias gcc="gcc -g"
 
 alias vim="vim -p"
 
-alias APT="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
-
 # suffix-alias
 alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
-
-
-# ++++++++++++++++++++++++++++++++++++
-# Ruby
-# ++++++++++++++++++++++++++++++++++++
-
-# Ruby gem
-export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
-
-# RAILS
-#export PATH="$PATH:/home/korso/.gem/jruby/1.8/bin"
-
-# Rbenv
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# jRuby
-#export JRUBY_OPTS="--1.9"
-#alias jruby="jruby-1.6.5.1"
 
 # man 5 terminfo; man console_codes
 export LESS_TERMCAP_mb="${fg[cyan]}"        # turn on blinking
@@ -162,21 +134,6 @@ export LESS_TERMCAP_se="${reset_color}"     # exit standout mode
 export LESS_TERMCAP_so="${fg[yellow]}${bg[blue]}"   # begin standout mode
 export LESS_TERMCAP_ue="${reset_color}"     # exit underline mode
 export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
-
-
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-# GO
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-export GOPATH=$HOME/Code/go
-export PATH=$PATH:$GOPATH/bin
-
-
-######################################
-# SSH
-######################################
-
-alias socks_ssh='ssh -N -D 8080 server'
 
 
 #+++++++++++++++++++++++++++++++++++++
