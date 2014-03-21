@@ -33,8 +33,6 @@ done
 RPROMPT=' %(?.%(!.%/.%~).:()'
 
 # left side
-#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
-#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[red]%}%m%{$reset_color%} %# "
 
 # directory stack
@@ -117,7 +115,7 @@ alias df="df --human-readable"
 
 alias tmux='tmux -2'
 
-alias objdump='objdump -d'
+alias objdump='objdump -Mintel -d'
 
 alias gcc="gcc -g"
 
