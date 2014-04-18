@@ -120,7 +120,7 @@ alias apg_short='/usr/bin/apg -a0 -m10 -x10 -n1 -MNL /dev/urandom'
 
 alias tmux='tmux -2'
 
-alias objdump='objdump -d'
+alias objdump='objdump -Mintel -d'
 
 alias gcc="gcc -g"
 
