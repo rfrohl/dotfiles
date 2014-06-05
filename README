@@ -10,3 +10,6 @@ Manual installation
 
 Or use the install script
     ~/.dotfiles/install.sh
+
+Important
+    change email and name in dotfiles/gitconfig
