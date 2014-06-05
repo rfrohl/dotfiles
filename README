@@ -1,5 +1,12 @@
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/gdbinit ~/.gdbinit
-ln -s ~/.dotfiles/hgrc ~/.hgrc
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+Checkout the repository
+    git checkout <URL> .dotfiles
+
+Manual installation
+    ln -s ~/.dotfiles/zshrc ~/.zshrc
+    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+    ln -s ~/.dotfiles/gdbinit ~/.gdbinit
+    ln -s ~/.dotfiles/hgrc ~/.hgrc
+    ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+
+Or use the install script
+    ~/.dotfiles/install.sh
