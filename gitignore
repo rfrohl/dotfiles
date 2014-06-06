@@ -1,0 +1,9 @@
+# vim
+*.swp
+*.swo
+
+# Java
+*.class
+
+# C
+*.o
