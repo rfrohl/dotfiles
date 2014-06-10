@@ -126,7 +126,11 @@ alias gcc="gcc -g"
 
 alias vim="vim -p"
 
-alias APT="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+# debian based
+#alias UPDATE="sudo apt-get update && sudo apt-get dist-upgrade"
+
+# arch
+#alias UPDATE="sudo pacman -Syu"
 
 # suffix-alias
 alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
