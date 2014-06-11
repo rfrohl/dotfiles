@@ -1,12 +1,9 @@
-# The following lines were added by compinstall
-
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' max-errors 10
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit && compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=12000
@@ -15,7 +12,6 @@ setopt autocd correct extendedglob nomatch histignorealldups
 setopt incappendhistory
 unsetopt beep notify
 bindkey -e
-# End of lines configured by zsh-newuser-install
 
 # default programs
 export EDITOR=vim
@@ -33,8 +29,6 @@ done
 RPROMPT=' %(?.%(!.%/.%~).:()'
 
 # left side
-#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}[%!]%# "
-#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} %(!.#.$) "
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}\$(git_super_status) %# "
 
 # directory stack
@@ -143,20 +137,9 @@ alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
 # Ruby gem
 export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
 
-# RAILS
-#export PATH="$PATH:/home/korso/.gem/jruby/1.8/bin"
-
-# Rbenv
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# jRuby
-#export JRUBY_OPTS="--1.9"
-#alias jruby="jruby-1.6.5.1"
 
 # man 5 terminfo; man console_codes
 export LESS_TERMCAP_mb="${fg[cyan]}"        # turn on blinking
