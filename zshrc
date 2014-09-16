@@ -101,7 +101,7 @@ alias ll='ls -l'
 alias hd='hexdump -C -v'
 
 # export GREP_OPTIONS='--color=auto --line-number'
-alias grep="grep --color=auto --line-number --recursive"
+alias grep="grep --color=auto --line-number"
 
 alias gdb="gdb -quiet"
 
