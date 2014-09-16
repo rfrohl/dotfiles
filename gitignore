@@ -1,5 +1,6 @@
 # vim
 .*.s[a-w][a-z]
+.s[a-w][a-z]
 
 # Java
 *.class
