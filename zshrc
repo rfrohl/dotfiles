@@ -119,7 +119,7 @@ alias objdump='objdump -Mintel -d'
 alias gcc="gcc -g"
 
 alias vim="vim -p"
-alias vim-git="vim `git status --porcelain | cut -d ' ' -f 3`"
+alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 
 # debian based
 #alias UPDATE="sudo apt-get update && sudo apt-get dist-upgrade"
