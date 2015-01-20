@@ -127,8 +127,12 @@ alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 # arch
 #alias UPDATE="sudo pacman -Syu"
 
-# suffix-alias
-alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
+## suffix-alias
+# suffix: editor
+alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim
+# suffix: wireshark
+alias -s cap=wireshark pcap=wireshark pcapng=wireshark
+alias -s pdf=evince
 
 
 # ++++++++++++++++++++++++++++++++++++
