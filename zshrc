@@ -168,7 +168,7 @@ export PATH=$PATH:$GOPATH/bin
 # SSH
 ######################################
 
-alias socks_ssh='ssh -N -D 8080 server'
+alias socks_ssh='ssh -f -N -D 8080 server'
 
 
 #+++++++++++++++++++++++++++++++++++++
