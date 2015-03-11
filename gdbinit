@@ -17,3 +17,12 @@ set confirm off
 set print inferior-events on
 
 set disassembly-flavor intel
+
+# somewhat automatic store/restore of breakpoints
+define save_breakpoints
+    save breakpoints breakpoints.gdb
+end
+
+define load_breakpoints
+    source breakpoints.gdb
+end
