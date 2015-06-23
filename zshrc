@@ -94,9 +94,9 @@ fi
 # ALIAS
 ######################################
 
-alias ls='ls --color=auto -F -v'
-alias la='ls -a'
-alias ll='ls -l'
+alias ls='ls --color=always -F -v'
+alias la='ls --color=always -a'
+alias ll='ls --color=always -l'
 
 alias hd='hexdump -C -v'
 
