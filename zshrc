@@ -103,6 +103,8 @@ alias hd='hexdump -C -v'
 export GREP_OPTIONS='--color=always'
 alias grep="grep --line-number"
 
+export LESS='-r'
+
 alias gdb="gdb -quiet"
 
 alias make="make -j4"
