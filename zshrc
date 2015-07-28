@@ -189,3 +189,8 @@ function pdfpextr()
        -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
        ${3}
 }
+
+function filter_log()
+{
+    sed -n /${1}/p ${2}
+}
