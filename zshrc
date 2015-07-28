@@ -100,8 +100,7 @@ alias ll='ls --color=always -l'
 
 alias hd='hexdump -C -v'
 
-export GREP_OPTIONS='--color=always'
-alias grep="grep --line-number"
+alias grep="grep --color=always --line-number"
 
 export LESS='-r'
 
