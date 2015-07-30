@@ -193,3 +193,8 @@ function filter_log()
 {
     sed -n /${1}/p ${2}
 }
+
+function base64decode()
+{
+    echo -n "$1" | base64 -d | xxd 
+}
