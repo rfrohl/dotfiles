@@ -196,5 +196,10 @@ function filter_log()
 
 function base64decode()
 {
-    echo -n "$1" | base64 -d | xxd 
+    echo -n "$1" | base64 -d | xxd
+}
+
+function string2hex()
+{
+    echo -n ${1} | xxd -p -g0 -c256
 }
