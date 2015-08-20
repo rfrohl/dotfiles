@@ -203,3 +203,13 @@ function string2hex()
 {
     echo -n ${1} | xxd -p -g0 -c256
 }
+
+function int2ip()
+{
+    python -c "import struct,socket; print socket.inet_ntoa(struct.pack('!I', ${1}))"
+}
+
+function ip2int()
+{
+    python -c "import struct,socket; print struct.unpack('!I', socket.inet_aton('${1}'))[0]"
+}
