@@ -206,10 +206,10 @@ function string2hex()
 
 function int2ip()
 {
-    python -c "import struct,socket; print socket.inet_ntoa(struct.pack('!I', ${1}))"
+    python -c "import struct,socket; print(socket.inet_ntoa(struct.pack('!I', ${1})))"
 }
 
 function ip2int()
 {
-    python -c "import struct,socket; print struct.unpack('!I', socket.inet_aton('${1}'))[0]"
+    python -c "import struct,socket; print(struct.unpack('!I', socket.inet_aton('${1}'))[0])"
 }
