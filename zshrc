@@ -113,8 +113,6 @@ alias df="df --human-readable"
 alias apg='/usr/bin/apg -a1 -m16 -x16 -n1 -MNL /dev/urandom'
 alias apg_short='/usr/bin/apg -a0 -m10 -x10 -n1 -MNL /dev/urandom'
 
-alias tmux='tmux -2'
-
 alias objdump='objdump -Mintel -d'
 
 alias gcc="gcc -g"
@@ -169,6 +167,18 @@ export PATH=$PATH:$GOPATH/bin
 ######################################
 
 alias socks_ssh='ssh -f -N -D 8080 server'
+
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# TMUX
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+alias tmux='tmux -2'
+
+if which tmux >/dev/null 2>&1; then
+    # if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux -2 attach || tmux -2 new-session)
+fi
 
 
 #+++++++++++++++++++++++++++++++++++++
