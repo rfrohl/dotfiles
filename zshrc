@@ -162,13 +162,6 @@ export GOPATH=$HOME/Code/go
 export PATH=$PATH:$GOPATH/bin
 
 
-######################################
-# SSH
-######################################
-
-alias socks_ssh='ssh -f -N -D 8080 server'
-
-
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # TMUX
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,4 +215,10 @@ function int2ip()
 function ip2int()
 {
     python -c "import struct,socket; print(struct.unpack('!I', socket.inet_aton('${1}'))[0])"
+}
+
+function socks()
+{
+    ssh -f -N -D 8080 ${1}
+    echo 'connect to localhost:8080'
 }
