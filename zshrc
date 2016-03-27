@@ -224,3 +224,17 @@ function socks()
     ssh -f -N -D 8080 ${1}
     echo 'connect to localhost:8080'
 }
+
+
+# VirtualBox functions
+function vm_start()
+{
+    VBoxManage startvm ${1}
+}
+
+function vm_save()
+{
+    VBoxManage controlvm ${1} savestate
+}
+
+
