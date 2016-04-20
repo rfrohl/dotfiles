@@ -129,7 +129,7 @@ alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 
 ## suffix-alias
 # suffix: editor
-alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim
+alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim
 # suffix: wireshark
 alias -s cap=wireshark pcap=wireshark pcapng=wireshark
 alias -s pdf=evince
@@ -217,6 +217,11 @@ function int2ip()
 function ip2int()
 {
     python -c "import struct,socket; print(struct.unpack('!I', socket.inet_aton('${1}'))[0])"
+}
+
+function hex2int()
+{
+    python -c "print int('${1}', 16)"
 }
 
 function socks()
