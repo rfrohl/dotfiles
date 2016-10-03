@@ -225,6 +225,11 @@ function socks()
     echo 'connect to localhost:8080'
 }
 
+function my_ip()
+{
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
+
 
 # VirtualBox functions
 function vm_start()
