@@ -122,7 +122,7 @@ alias gcc="gcc -g"
 alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 
 # debian based
-#alias UPDATE="sudo apt-get update && sudo apt-get dist-upgrade"
+#alias UPDATE="sudo apt update && sudo apt dist-upgrade"
 
 # arch
 #alias UPDATE="sudo pacman -Syu"
