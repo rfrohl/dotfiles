@@ -1,0 +1,10 @@
+#!/bin/sh
+# this script uses socat to proxy git through a SOCKS proxy
+
+SOCAT=/usr/bin/socat
+
+__proxy_ip=localhost
+__proxy_port=8080
+
+#exec $SOCAT STDIO SOCKS4:$__proxy_ip:$1:$2,socksport=$__proxy_port
+exec socat STDIO SOCKS4:$__proxy_ip:$1:$2,socksport=$__proxy_port

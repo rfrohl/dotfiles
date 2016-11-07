@@ -235,6 +235,9 @@ function socks()
     echo 'connect to localhost:8080'
 }
 
+# wraper to make git:// work with proxy
+#export GIT_PROXY_COMMAND='~/.dotfiles/git-proxy-wrapper'
+
 function my_ip()
 {
     dig +short myip.opendns.com @resolver1.opendns.com
