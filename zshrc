@@ -219,6 +219,11 @@ function ip2int()
     python -c "import struct,socket; print(struct.unpack('!I', socket.inet_aton('${1}'))[0])"
 }
 
+function ip2hex()
+{
+    python -c "ip = '${1}'.split('.'); print '{:02X}:{:02X}:{:02X}:{:02X}'.format(*map(int, ip))"
+}
+
 function hex2int()
 {
     python -c "print int('${1}', 16)"
