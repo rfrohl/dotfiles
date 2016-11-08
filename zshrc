@@ -112,8 +112,8 @@ alias make="make -j4"
 
 alias df="df --human-readable"
 
-alias apg='/usr/bin/apg -a1 -m16 -x16 -n1 -MNL /dev/urandom'
-alias apg_short='/usr/bin/apg -a0 -m10 -x10 -n1 -MNL /dev/urandom'
+alias apg='/usr/bin/apg -a1 -m20 -x20 -n1 -MNL /dev/urandom'
+alias apg_short='/usr/bin/apg -a0 -m12 -x12 -n1 -MNL /dev/urandom'
 
 alias objdump='objdump -Mintel -d'
 
