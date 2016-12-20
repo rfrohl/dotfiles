@@ -1,5 +1,6 @@
 [core]
     excludesfile = ~/.gitignore
+    editor = vim -c 'set spell nocursorline'
 
 [user]
     email = frohl.robert@gmail.com
