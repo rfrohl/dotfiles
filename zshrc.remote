@@ -118,8 +118,6 @@ alias objdump='objdump -Mintel -d'
 
 alias gcc="gcc -g"
 
-alias vim="vim -p"
-
 # suffix-alias
 alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim pl=vim pdf=evince
 
