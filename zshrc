@@ -231,7 +231,7 @@ function hex2int()
 
 function socks()
 {
-    ssh -f -N -D 8080 ${1}
+    ssh -f -C -N -D 8080 ${1}
     echo 'connect to localhost:8080'
 }
 
