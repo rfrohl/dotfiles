@@ -130,6 +130,19 @@ export LESS_TERMCAP_so="${fg[yellow]}${bg[blue]}"   # begin standout mode
 export LESS_TERMCAP_ue="${reset_color}"     # exit underline mode
 export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
 
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# TMUX
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+alias tmux='tmux -2'
+
+if which tmux >/dev/null 2>&1; then
+    # not inside a tmux session and no ssh connection
+    if [[ ( -z "$TMUX" ) && ( -z "$SSH_CLIENT" ) ]]; then
+        # if no session is started, start a new one
+        tmux -2 attach || tmux -2 new-session
+    fi
+fi
 
 #+++++++++++++++++++++++++++++++++++++
 # FUNCTIONS
