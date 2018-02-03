@@ -25,9 +25,11 @@ export BROWSER=firefox
 autoload -U colors && colors
 
 # dynamicly load addons
-for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
-    source $file
-done
+if [ -d $HOME/.dotfiles ]; then
+    for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
+        source $file
+    done
+fi
 
 # prompt with current path on the right side
 RPROMPT=' %(?.%(!.%/.%~).:()'
