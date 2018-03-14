@@ -12,3 +12,6 @@
 *.gem
 .bundle
 coverage
+
+# Python
+venv
