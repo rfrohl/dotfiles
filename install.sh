@@ -7,3 +7,6 @@ ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
 ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
+
+mkdir ~/.newsboat
+ln -s ~/.dotfiles/newsboat.cfg ~/.newsboat/config
