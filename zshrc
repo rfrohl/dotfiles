@@ -127,6 +127,9 @@ alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 # arch
 #alias UPDATE="sudo pacman -Syu"
 
+# suse
+# alias UPDATE="sudo zypper refresh && sudo zypper update"
+
 ## suffix-alias
 # suffix: editor
 alias -s txt=vim tex=gvim cc=vim cpp=vim h=vim hpp=vim
