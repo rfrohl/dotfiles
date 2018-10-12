@@ -1,7 +1,5 @@
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _expand _complete
-zstyle ':completion:*' max-errors 10
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit && compinit
@@ -46,14 +44,19 @@ setopt listpacked
 # sort order of 'ls -v'
 setopt numericglobsort
 
-# zstyle ':completion:*' menu select=1
-# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' completer _complete _correct _approximate
+zstyle ':completion:*' max-errors 10
+#zstyle ':completion:*' menu select=1
+#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+
+autoload -U select-word-style
+select-word-style shell
 # enable arrow keys in combination with [ctrl]
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 # stop at dots
-export WORDCHARS='.'
+#export WORDCHARS='.'
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
