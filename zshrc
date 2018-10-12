@@ -45,11 +45,13 @@ setopt listpacked
 # sort order of 'ls -v'
 setopt numericglobsort
 
+autoload -U select-word-style
+select-word-style shell
 # enable arrow keys in combination with [ctrl]
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 # stop at dots
-export WORDCHARS='.'
+#export WORDCHARS='.'
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
