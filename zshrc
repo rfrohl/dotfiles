@@ -22,7 +22,7 @@ export LS_COLORS
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' completer  _complete _correct _ignored _expand _approximate
+zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ':completion:*' max-errors 10
 
 # dynamicly load addons
