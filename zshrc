@@ -145,11 +145,11 @@ alias -s pdf=evince
 # ++++++++++++++++++++++++++++++++++++
 
 # Ruby gem
-export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
+#export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+#export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # man 5 terminfo; man console_codes
 export LESS_TERMCAP_mb="${fg[cyan]}"        # turn on blinking
@@ -165,8 +165,8 @@ export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
 # GO
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-export GOPATH=$HOME/Code/go
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH=$HOME/Code/go
+#export PATH=$PATH:$GOPATH/bin
 
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
