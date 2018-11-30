@@ -9,5 +9,7 @@ ln -s ~/.dotfiles/gdbinit ~/.gdbinit
 ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
 ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
 
+[[ -e ~/.ssh && ! -e ~/.ssh/config ]] && cp ~/.dotfiles/ssh_config ~/.ssh/config
+
 mkdir ~/.newsboat
 ln -s ~/.dotfiles/newsboat.cfg ~/.newsboat/config
