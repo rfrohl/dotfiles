@@ -1,4 +1,8 @@
 #!/bin/bash
+
+PATH=/usr/bin
+
+# local config
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
@@ -9,7 +13,9 @@ ln -s ~/.dotfiles/gdbinit ~/.gdbinit
 ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
 ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
 
+# security related
 [[ -e ~/.ssh && ! -e ~/.ssh/config ]] && cp ~/.dotfiles/ssh_config ~/.ssh/config
 
-mkdir ~/.newsboat
+# advanced tooling
+[[ ! -e ~/.newsboat ]] && mkdir ~/.newsboat
 ln -s ~/.dotfiles/newsboat.cfg ~/.newsboat/config
