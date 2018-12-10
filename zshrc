@@ -106,7 +106,7 @@ alias hd='hexdump -C -v'
 
 alias grep="grep --color=always --line-number"
 
-export LESS='-r'
+export LESS='-R'
 
 alias gdb="gdb -quiet"
 
