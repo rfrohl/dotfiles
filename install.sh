@@ -14,7 +14,10 @@ ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
 ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
 
 # security related
-[[ -e ~/.ssh && ! -e ~/.ssh/config ]] && cp ~/.dotfiles/ssh_config ~/.ssh/config
+if [[ -e ~/.ssh && ! -e ~/.ssh/config ]]; then
+    cp ~/.dotfiles/ssh_config ~/.ssh/config
+    mkdir ~/.ssh/sockets
+fi
 
 cat << EOF
 for nftables firewall (as root):
