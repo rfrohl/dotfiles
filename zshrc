@@ -102,24 +102,23 @@ alias ls='ls --color=always -F -v'
 alias la='ls --color=always -a'
 alias ll='ls --color=always -l'
 
-alias hd='hexdump -C -v'
-
 alias grep="grep --color=always --line-number"
 
 export LESS='-R'
 
 alias gdb="gdb -quiet"
+alias objdump='objdump -Mintel -d'
+alias hd='hexdump -C -v'
 
 alias make="make -j4"
+alias gcc="gcc -g"
 
 alias df="df --human-readable"
 
 alias apg='/usr/bin/apg -a1 -m20 -x20 -n1 -MNL /dev/urandom'
 alias apg_short='/usr/bin/apg -a0 -m12 -x12 -n1 -MNL /dev/urandom'
 
-alias objdump='objdump -Mintel -d'
-
-alias gcc="gcc -g"
+alias ip="ip -color"
 
 alias vim-git='vim `git status --porcelain | cut -d " " -f 3`'
 
