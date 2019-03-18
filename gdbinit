@@ -16,6 +16,7 @@ set confirm off
 # notify me if inferior start, exit or detach (usfull for debuging multiple programs)
 set print inferior-events on
 set print pretty on
+#set follow-fork-mode child
 
 set disassembly-flavor intel
 
