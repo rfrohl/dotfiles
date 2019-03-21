@@ -8,6 +8,7 @@ Manual installation
     ln -s ~/.dotfiles/hgrc ~/.hgrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
     ln -s ~/.dotfiles/gitignore ~/.gitignore
+    git submodule update --init
 
 Or use the install script
     ~/.dotfiles/install.sh

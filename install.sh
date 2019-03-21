@@ -30,3 +30,5 @@ EOF
 # advanced tooling
 [[ ! -e ~/.newsboat ]] && mkdir ~/.newsboat
 ln -s ~/.dotfiles/newsboat.cfg ~/.newsboat/config
+
+cd ~/.dotfiles && git submodule update --init
