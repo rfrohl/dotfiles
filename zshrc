@@ -30,6 +30,7 @@ for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
     source $file
 done
 
+setopt prompt_subst
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~/ \$(git_super_status)"$'\n'"%#> "
 # prompt with current path on the right side
 #RPROMPT=' %(?.%(!.%/.%~).:()'
