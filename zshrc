@@ -26,16 +26,14 @@ zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ':completion:*' max-errors 10
 
 # dynamicly load addons
-for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
-    source $file
-done
+if [ -d $HOME/.dotfiles ]; then
+    for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
+        source $file
+    done
+fi
 
 setopt prompt_subst
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~/ \$(git_super_status)"$'\n'"%#> "
-# prompt with current path on the right side
-#RPROMPT=' %(?.%(!.%/.%~).:()'
-# left side
-#PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}\$(git_super_status) %# "
 
 # directory stack
 setopt autopushd
