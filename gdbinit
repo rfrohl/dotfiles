@@ -29,4 +29,5 @@ define load_breakpoints
     source breakpoints.gdb
 end
 
-source ~/.dotfiles/peda/peda.py
+#source ~/.dotfiles/peda/peda.py
+source ~/.dotfiles/gef/gef.py
