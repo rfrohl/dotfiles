@@ -159,3 +159,9 @@ function pdfpextr()
        -sOutputFile=${3%.pdf}_p${1}-p${2}.pdf \
        ${3}
 }
+
+function my_ip()
+{
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
+
