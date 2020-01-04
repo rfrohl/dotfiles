@@ -36,8 +36,8 @@ table inet filter {
         ip protocol igmp accept
 
         # SSH (avoid brute force)
-        #tcp dport ssh ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter drop
         #tcp dport ssh ct state new limit rate 15/minute accept
+        #tcp dport ssh ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter drop
 
         # HTTP (ports 80 & 443)
         #tcp dport { http, https } accept
