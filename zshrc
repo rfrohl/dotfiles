@@ -25,11 +25,10 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ':completion:*' max-errors 10
 
-# dynamicly load addons
+# load addons
 if [ -d $HOME/.dotfiles ]; then
-    for file in $HOME/.dotfiles/zsh/*/zshrc.sh; do
-        source $file
-    done
+    source $HOME/.dotfiles/zsh/git-prompt//zshrc.sh
+    source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 setopt prompt_subst
