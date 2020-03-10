@@ -25,14 +25,15 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' completer _complete _correct _approximate
 zstyle ':completion:*' max-errors 10
 
+setopt prompt_subst
+PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~/ "$'\n'"%#> "
+
 # load addons
 if [ -d $HOME/.dotfiles ]; then
-    source $HOME/.dotfiles/zsh/git-prompt//zshrc.sh
+    source $HOME/.dotfiles/zsh/gitstatus/plugin.zsh
+    RPROMPT='$(git_prompt_string)'
     source $HOME/.dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-
-setopt prompt_subst
-PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%~/ \$(git_super_status)"$'\n'"%#> "
 
 # directory stack
 setopt autopushd
