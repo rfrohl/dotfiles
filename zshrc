@@ -105,6 +105,15 @@ alias grep="grep --color=always --line-number"
 
 export LESS='-R'
 
+# man 5 terminfo; man console_codes
+export LESS_TERMCAP_mb="${fg[cyan]}"        # turn on blinking
+export LESS_TERMCAP_md="${fg_bold[blue]}"   # turn on bold (extra bright) mode
+export LESS_TERMCAP_me="${reset_color}"     # turn of all attributes
+export LESS_TERMCAP_se="${reset_color}"     # exit standout mode
+export LESS_TERMCAP_so="${fg[yellow]}${bg[blue]}"   # begin standout mode
+export LESS_TERMCAP_ue="${reset_color}"     # exit underline mode
+export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
+
 alias gdb="gdb -quiet"
 alias objdump='objdump -Mintel -d'
 alias hd='hexdump -C -v'
@@ -149,14 +158,12 @@ alias -s pdf=evince
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 #export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# man 5 terminfo; man console_codes
-export LESS_TERMCAP_mb="${fg[cyan]}"        # turn on blinking
-export LESS_TERMCAP_md="${fg_bold[blue]}"   # turn on bold (extra bright) mode
-export LESS_TERMCAP_me="${reset_color}"     # turn of all attributes
-export LESS_TERMCAP_se="${reset_color}"     # exit standout mode
-export LESS_TERMCAP_so="${fg[yellow]}${bg[blue]}"   # begin standout mode
-export LESS_TERMCAP_ue="${reset_color}"     # exit underline mode
-export LESS_TERMCAP_us="${fg[magenta]}"     # begin underline mode
+
+# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# Rust
+# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+#export PATH=$PATH:$HOME/.cargo/bin
 
 
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
