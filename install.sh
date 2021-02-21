@@ -15,7 +15,7 @@ ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
 
 # security related
 if [[ -e ~/.ssh && ! -e ~/.ssh/config ]]; then
-    cp ~/.dotfiles/ssh_config ~/.ssh/config
+    cp ~/.dotfiles/skel/ssh_config ~/.ssh/config
     mkdir ~/.ssh/sockets
 fi
 
