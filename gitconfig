@@ -5,6 +5,7 @@
 [user]
     email = robert.frohl@posteo.de
     name = rfrohl
+    signingKey = 0xCECDC85F79645A9E
 
 [rerere]
     enabled = true
@@ -32,3 +33,9 @@
 
 [pull]
 	ff = only
+
+[gpg]
+    program = gpg2
+
+[commit]
+    gpgsign = true
