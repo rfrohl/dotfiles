@@ -3,7 +3,7 @@
     editor = vim -c 'set spell nocursorline'
 
 [user]
-    email = frohl.robert@gmail.com
+    email = robert.frohl@posteo.de
     name = rfrohl
 
 [rerere]
