@@ -25,8 +25,8 @@ table inet filter {
 
         # TODO: SET STATEMENT, for geoblock?, flood protection?
 
-        iifname "eth0" jump input_wired
-        iifname "wlan0" jump input_wireless
+        iifname "enp5s0" jump input_wired
+        iifname "wlp3s0" jump input_wireless
     }
 
     chain input_wired { # trust wired
