@@ -9,5 +9,5 @@ Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.
 
 Host *
     ControlMaster   auto
-    ControlPath     ~/.ssh/sockets/%r@%h-%p
+    ControlPath     ~/.ssh/sockets/%r@%C
     ControlPersist  600
