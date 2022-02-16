@@ -7,6 +7,9 @@
     name = Robert Frohl
     signingKey = 0xCECDC85F79645A9E
 
+[init]
+	defaultBranch = main
+
 [rerere]
     enabled = true
 
