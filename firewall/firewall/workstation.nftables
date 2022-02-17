@@ -1,0 +1,61 @@
+#!/usr/sbin/nft -f
+# Firewall for workstation with two interfaces
+# other examples in /usr/share/nftables/
+
+flush ruleset
+
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
+
+        # early drop of invalid connections
+        ct state invalid counter log drop
+
+        iif lo accept
+
+        # strict tcp session handling, might cause problems with tcp session pickup if used in other chain
+        ct state new tcp flags & (fin|syn|rst|ack) != syn counter log drop
+
+        # allow established/related connections
+        ct state established,related accept
+
+        # no ping floods:
+        ip protocol icmp icmp type echo-request limit rate over 10/second burst 4 packets counter log drop
+        ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate over 10/second burst 4 packets counter log drop
+
+        # TODO: SET STATEMENT, for geoblock?, flood protection?
+
+        iifname "enp5s0" jump input_wired
+        iifname "wlp3s0" jump input_wireless
+    }
+
+    chain input_wired { # trust wired
+        # ICMP & IGMP
+        ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, mld-listener-query, mld-listener-report, mld-listener-reduction, nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, ind-neighbor-solicit, ind-neighbor-advert, mld2-listener-report } accept
+        ip protocol icmp icmp type { destination-unreachable, router-solicitation, router-advertisement, time-exceeded, parameter-problem } accept
+        ip protocol igmp accept
+
+        # SSH (avoid brute force)
+        #tcp dport ssh ct state new limit rate 15/minute accept
+        #tcp dport ssh ip saddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter drop
+
+        # HTTP (ports 80 & 443)
+        #tcp dport { http, https } accept
+
+        counter reject with icmp type port-unreachable # all other traffic
+    }
+
+    chain input_wireless { # wireless untrusted
+        counter drop
+    }
+
+
+    chain forward {
+        type filter hook forward priority 0; policy drop;
+    }
+
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
+}
+# vim:set ts=4 sw=4 et:
