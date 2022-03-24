@@ -104,6 +104,7 @@ alias ls='ls --color=always -F -v'
 alias la='ls --color=always -a'
 alias ll='ls --color=always -l'
 
+alias bgrep="/usr/bin/grep"
 alias grep="grep --color=always --line-number"
 
 export LESS='-R'
