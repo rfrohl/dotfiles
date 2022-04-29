@@ -14,6 +14,8 @@ ln -s ~/.dotfiles/gdbinit ~/.gdbinit
 ln -s ~/.dotfiles/ansible.cfg ~/.ansible.cfg
 ln -s ~/.dotfiles/gpg.conf ~/.gnupg/gpg.conf
 
+ln -s ~/.dotfiles/bin ~/.local/bin
+
 # security related
 if [[ -e ~/.ssh && ! -e ~/.ssh/config ]]; then
     cp ~/.dotfiles/skel/ssh_config ~/.ssh/config

@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! THIS SCRIPT DISCARDS ALL YOUR LOCAL UNSTAGDED !
+# !   CHANGES AND COMMITS HAED THE REMOTE REPO    !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# Reset local branches to related tracked remote ones
+
+# author StayPirate:
+# https://github.com/StayPirate/dotfiles/blob/master/.local/bin/git-reset-to-remote
+
+print_help(){
+  echo "git-reset-to-remote [-h|--help] [--debug] [--all-local-branches] [--remote <remote>]"
+}
+
+main(){
+  local all_local_branches=$1
+  local remote=$2
+
+  local initial_branch=`git branch --show-current`
+  git fetch $remote --quiet --prune --prune-tags --no-auto-maintenance
+  echo "Fetched objects and refs from $remote"
+  echo -n "Reset ${initial_branch} to ${remote}/${initial_branch}"
+  git reset --quiet --hard "${remote}/${initial_branch}" && echo
+
+  if $all_local_branches; then
+    git branch -l | grep -v "$initial_branch" | sed "s/ //g" | \
+      while read -r branch; do
+        echo -n "Reset ${branch} to ${remote}/${branch}"
+        git switch --quiet "$branch"
+        git reset --quiet --hard "${remote}/${branch}"
+        echo;
+      done
+    git switch --quiet $initial_branch
+  fi
+
+  git maintenance run --auto --quiet
+}
+
+all_local_branches='false'
+remote='origin'
+while :; do
+    case "${1:-}" in
+        -h | --help ) print_help; exit ;;
+        --debug) set -x ;;
+        --all-local-branches) all_local_branches='true' ;;
+        --remote) remote=$2 && shift ;;
+        -?*) echo "${orange}Unknown option${no_format}: ${1:-}" > /dev/stderr && exit 0 ;;
+        *) break ;;
+    esac
+    shift
+done
+
+main $all_local_branches $remote
