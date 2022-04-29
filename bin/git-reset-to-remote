@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-#
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# ! THIS SCRIPT DISCARDS ALL YOUR LOCAL UNSTAGDED !
-# !   CHANGES AND COMMITS HAED THE REMOTE REPO    !
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#
-# Reset local branches to related tracked remote ones
-
 # author StayPirate:
 # https://github.com/StayPirate/dotfiles/blob/master/.local/bin/git-reset-to-remote
 
@@ -52,4 +44,18 @@ while :; do
     shift
 done
 
-main $all_local_branches $remote
+cat << WARNING
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! THIS SCRIPT DISCARDS ALL YOUR LOCAL UNSTAGDED  !
+# !   CHANGES AND COMMITS AHEAD OF THE REMOTE REPO !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# Reset local branches to related, tracked remote ones
+
+WARNING
+
+read -p "Are you sure you want to continue? [y/N] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo
+    main $all_local_branches $remote
+fi
