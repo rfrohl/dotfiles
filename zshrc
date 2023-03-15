@@ -267,3 +267,10 @@ function gitfind()
 	done
 }
 
+function tmux_sshenv()
+{
+    if [ ! -z "$SSH_CONNECTION" ]; then
+        eval $(tmux show-environment -s|/usr/bin/grep -v "unset")
+    fi
+}
+
