@@ -1,0 +1,15 @@
+#!/bin/sh
+# needs bubblewrap and quilt
+
+(exec /usr/bin/bwrap \
+    --new-session \
+    --ro-bind / / \
+    --bind $PWD $PWD \
+    --tmpfs /tmp \
+    --tmpfs /var/tmp \
+    --dev /dev \
+    --unshare-all \
+    --seccomp 10 \
+    /usr/bin/quilt "$@"
+) \
+    10< /usr/share/doc/packages/bubblewrap/demos/flatpak.bpf # FD 10
