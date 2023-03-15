@@ -156,7 +156,14 @@ alias -s pdf=evince
 # TMUX
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-alias tmux='tmux -2'
+if [ -z "$CONTAINER_ID" ]; then
+    alias tmux='tmux -2 -u'
+else
+    if [ ! -d "/run/tmux/$CONTAINER_ID" ]; then
+        mkdir "/run/tmux/$CONTAINER_ID"
+    fi
+    alias tmux="tmux -2 -u -S '/run/tmux/$CONTAINER_ID/default'"
+fi
 
 if which tmux >/dev/null 2>&1; then
     # not inside a tmux session and no ssh connection
