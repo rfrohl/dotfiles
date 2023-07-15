@@ -1,5 +1,5 @@
-Checkout the repository
-    git checkout <URL> .dotfiles
+Clone the repository
+    git clone <URL> .dotfiles
 
 Manual installation
     ln -s ~/.dotfiles/zshrc ~/.zshrc
