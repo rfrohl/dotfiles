@@ -3,7 +3,7 @@
 # https://github.com/StayPirate/dotfiles/blob/master/.local/bin/git-reset-to-remote
 
 print_help(){
-  echo "git-reset-to-remote [-h|--help] [--debug] [--all-local-branches] [--remote <remote>]"
+  echo "git-reset-to-remote [-h|--help] [--debug] [-a|--all-local-branches] [-p|--prune] [--remote <remote>]"
 }
 
 main(){
@@ -11,7 +11,11 @@ main(){
   local remote=$2
 
   local initial_branch=`git branch --show-current`
-  git fetch $remote --quiet --prune --prune-tags --no-auto-maintenance
+  if $prune; then
+    git fetch $remote --quiet --prune --prune-tags --no-auto-maintenance
+  else
+    git fetch $remote --quiet
+  fi
   echo "Fetched objects and refs from $remote"
   echo -n "Reset ${initial_branch} to ${remote}/${initial_branch}"
   git reset --quiet --hard "${remote}/${initial_branch}" && echo
@@ -36,7 +40,8 @@ while :; do
     case "${1:-}" in
         -h | --help ) print_help; exit ;;
         --debug) set -x ;;
-        --all-local-branches) all_local_branches='true' ;;
+        -a | --all-local-branches) all_local_branches='true' ;;
+        -p | --prune) prune='true' ;;
         --remote) remote=$2 && shift ;;
         -?*) echo "${orange}Unknown option${no_format}: ${1:-}" > /dev/stderr && exit 0 ;;
         *) break ;;
@@ -46,7 +51,7 @@ done
 
 cat << WARNING
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# ! THIS SCRIPT DISCARDS ALL YOUR LOCAL UNSTAGDED  !
+# ! THIS SCRIPT DISCARDS ALL YOUR LOCAL UNSTAGED   !
 # !   CHANGES AND COMMITS AHEAD OF THE REMOTE REPO !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #
