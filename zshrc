@@ -5,7 +5,7 @@ HISTSIZE=10000
 SAVEHIST=12000
 #setopt appendhistory
 setopt autocd correct extendedglob nomatch histignorealldups
-setopt incappendhistory
+setopt share_history hist_ignore_space
 unsetopt beep notify
 bindkey -e
 
