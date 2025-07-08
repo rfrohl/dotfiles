@@ -227,6 +227,11 @@ function hex2int()
     python -c "print int('${1}', 16)"
 }
 
+function hex2string()
+{
+    echo -n ${1} | xxd -p -r ; echo
+}
+
 function socks()
 {
     ssh -f -C -N -D 8080 ${1}
